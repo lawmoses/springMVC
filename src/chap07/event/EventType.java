@@ -1,4 +1,4 @@
-package chap07_c01;
+package chap07.event;
 
 public enum EventType {
 		FLASHMOB, CIRCUS, CONFERENCE

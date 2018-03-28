@@ -9,21 +9,29 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	
 	
-	<!-- chap07.EventController 에서 @Controller 읽어내는 것  -->
+<!-- chap07.EventController 에서 @Controller 읽어내는 것 @어노테이션 읽어서 매핑 시키는 것이다. -->
+<!-- 어노테이션으로 읽으라는 말이다. -->
+
 	<mvc:annotation-driven></mvc:annotation-driven>
 	
 
-	<!-- 콘트롤러 자바소스 필요 없이 /index 하면 index로 보내준다. view밑에 있는 것  -->
+<!-- 콘트롤러 자바소스 필요 없이 /index 하면 index로 보내준다. view밑에 있는 것  -->
+	
 	<mvc:view-controller path="/index2" view-name="index2"/>
 
 
-	<!-- ??? 디폴트 핸들러로 하겠다는 것임 -->
+<!-- ??? 디폴트 핸들러로 하겠다는 것임 -->
+<!-- 즉, 핸들러가 없으니까 어노테이션으로 읽어라는 말이다.  -->
+	
 	<mvc:default-servlet-handler/>
 	
 	
 	<!-- @Controller 로 되어있다. -->
-	<bean class="chap07_c01.EventController"></bean>
-	
+	<bean class="chap07.event.EventController"></bean>
+	<bean class="chap07.member.MemberController">
+		<property name="memberService" ref="memberService"></property>
+	</bean>
+	<bean id="memberService" class="chap07.member.MemberService"></bean>
 	
 	
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

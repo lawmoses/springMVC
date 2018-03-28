@@ -1,4 +1,4 @@
-package chap07_c01;
+package chap07.event;
 
 import java.io.IOException;
 import java.util.List;

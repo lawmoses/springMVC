@@ -1,4 +1,4 @@
-package chap07_c01;
+package chap07.event;
 
 import java.util.Collection;
 import java.util.Date;

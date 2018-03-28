@@ -10,12 +10,14 @@
 
 	<mvc:annotation-driven></mvc:annotation-driven>
 
+
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+
 	
-	<bean class="chap07_c01.HelloController"></bean>
+	<bean class="chap07.event.HelloController"></bean>
 
 
 </beans>

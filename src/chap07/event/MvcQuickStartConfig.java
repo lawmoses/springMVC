@@ -1,4 +1,4 @@
-package chap07_c01;
+package chap07.event;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

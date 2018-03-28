@@ -37,7 +37,7 @@
 	  		</init-param>
 	  		<init-param>
 	  			<param-name>contextConfigLocation</param-name>
-	  			<param-value>chap07_c01.MvcQuickStartConfig</param-value>
+	  			<param-value>chap07.event.MvcQuickStartConfig</param-value>
 	  		</init-param>
 	  		<load-on-startup>1</load-on-startup>
 	  </servlet>

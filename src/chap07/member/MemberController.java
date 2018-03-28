@@ -49,11 +49,15 @@ public class MemberController {
 					);
 		}
 			
+		
+			//선생님께서 수정하심
 		@RequestMapping("/members/{memberId}/orders/{orderId}")
 		public String memberOrderDetail(@PathVariable("memberId") String memberId, 
 											@PathVariable("orderId") Long orderId, Model model) {
 				model.addAttribute("member", memberservice.getMemberInfo(memberId));
-				model.addAttribute("orders", new OrderInfo(orderId, orderId.intValue() * 5000 + 5000, memberId));
+				OrderInfo  od = new OrderInfo(orderId, orderId.intValue() * 5000 + 5000, memberId);
+				System.out.println(od);
+				model.addAttribute("orders", od );
 				return "member/memberOrderDetail";
 		}
 			

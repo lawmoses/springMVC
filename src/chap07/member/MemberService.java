@@ -9,17 +9,17 @@ public class MemberService {
 
 	private int nextMemberId = 0;
 	private Map<String, MemberInfo> memberMap = new HashMap<>();
-	
+
 	public MemberService() {
 		memberMap.put("m1", new MemberInfo("m1", "이상화", "sanghwa@sanghwa.com", "sanghwa", false, new Address()));
 		memberMap.put("m2", new MemberInfo("m2", "김연아", "yuna@yuna.com", "yuna", false, new Address()));
 		nextMemberId = 3;
 	}
-	
+
 	public MemberInfo getMemberInfo(String memberId) {
 		return memberMap.get(memberId);
 	}
-	
+
 	public void modifyMemberInfo(MemberModRequest modReq) {
 		MemberInfo mi = memberMap.get(modReq.getId());
 		if (mi == null)
@@ -32,11 +32,11 @@ public class MemberService {
 		mi.setAllowNoti(modReq.isAllowNoti());
 		mi.setAddress(modReq.getAddress());
 	}
-	
+
 	public List<MemberInfo> getMembers() {
 		return new ArrayList<MemberInfo>(memberMap.values());
 	}
-	
+
 	public void registNewMember(MemberRegistRequest memRegReq) {
 		MemberInfo mi = new MemberInfo("m" + nextMemberId,
 				memRegReq.getName(), memRegReq.getEmail(), memRegReq.getPassword(),

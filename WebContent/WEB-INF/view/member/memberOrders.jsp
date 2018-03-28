@@ -5,17 +5,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-
-<title>회원 목록</title>
+<title>회원 주문 목록</title>
 </head>
 <body>
 
-	<ul>
-		<c:forEach var="mi" items="${members }">
-			<li><a href="${pageContext.request.contextPath}/members/${mi.id}">${mi.name}</a>
-			</li>
-		</c:forEach>
-	</ul>
+${member.name} 님의 주문 목록:
+
+<ul>
+	<c:forEach var="order" items="${orders}">
+	<li><a href="/springMVC/members/${order.memberId}/orders/${order.id}">${order.id}</a></li>
+	</c:forEach>
+	
+</ul>
+
 
 </body>
 </html>

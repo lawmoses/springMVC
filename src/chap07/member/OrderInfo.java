@@ -24,4 +24,9 @@ public class OrderInfo {
 		return memberId;
 	}
 
+	@Override
+	public String toString() {
+		return "OrderInfo [id=" + id + ", totalPrice=" + totalPrice + ", memberId=" + memberId + "]";
+	}
+  
 }

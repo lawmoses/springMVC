@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<!-- (3/26 월) 수업.1 -->
 <ul>
 	<li>헬로우월드:
 		<ul>
@@ -28,6 +29,28 @@
 </br>
 </br>
 
+
+<!-- (3/28 수) 수업.1 -->
+<li> @RequestMapping, @PathVariable
+	<ul>
+		<li><a href="member/regist">/member/regist</a>: GET/POST 예, RegistrationController</li>
+		<li><a href="members">/members</a>: @PathVariable 사용 위한 목록 출력, MemberController.members()</li>
+		<li><a href="members/m2">/members/m2</a>: @PathVariable 예, MemberController.memberDetail()</li>
+		<li><a href="members/m2/orders/1">/members/m2/orders/1</a>: @PathVariable 예, MemberController.memberOrderDetail()</li>
+		<li><a href="members/m2/orders/1a">/members/m2/orders/1a</a>: @PathVariable 400 응답 예, MemberController.memberOrderDetail()</li>
+		<li><a href="files/a123">/files/a123</a>: @PathVariable 정규표현식, FileController.fileInfo()</li>
+		<li><a href="files/a1">/files/a1</a>: @PathVariable 정규표현식 404, FileController.fileInfo()</li>
+		<li><a href="folders/1/2/3/files">/files/1/2/3/files</a>: @RequestMapping Ant패턴, FileController.list()</li>
+	</ul>
+</li>
+</br>
+</br>
+
+
+
+
+
+<!-- (3/26 월) 수업.2 -->
 <li>요청 파라미터 처리:
 	<ul>
 	<li><a href="event/detail?id=1">event/detail?id=1</a>: HttpServletRequest을 이용한 파라미터 구하기, EventController.detail()</li>
@@ -39,6 +62,9 @@
 </li>
 </br>
 </br>
+
+
+
 
 </ul>
 </body>

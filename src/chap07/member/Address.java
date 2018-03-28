@@ -8,6 +8,19 @@ public class Address {
 	private String address1;
 	@NotEmpty
 	private String address2;
+	
+	//Ãß°¡
+/*	@NotEmpty
+	private String address3;
+	
+	public String getAddress3() {
+		return address3;
+	}
+
+	public void setAddress3(String address3) {
+		this.address3 = address3;
+	}*/
+
 	private String zipcode;
 
 	public String getAddress1() {

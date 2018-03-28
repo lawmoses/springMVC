@@ -1,4 +1,4 @@
-package chap07.event;
+package chap07.quickstart;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

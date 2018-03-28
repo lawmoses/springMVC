@@ -1,4 +1,4 @@
-package chap07.event;
+package chap07.quickstart;
 
 import java.io.IOException;
 import java.io.PrintWriter;

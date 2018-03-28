@@ -17,7 +17,7 @@
 	</bean>
 
 	
-	<bean class="chap07.event.HelloController"></bean>
+	<bean class="chap07.quickstart.HelloController"></bean>
 
 
 </beans>

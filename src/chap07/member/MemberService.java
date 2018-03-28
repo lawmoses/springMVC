@@ -13,8 +13,8 @@ public class MemberService {
 	public MemberService() {
 		memberMap.put("m1", new MemberInfo("m1", "ÀÌ»óÈ­", "sanghwa@sanghwa.com", "sanghwa", false, new Address()));
 		memberMap.put("m2", new MemberInfo("m2", "±è¿¬¾Æ", "yuna@yuna.com", "yuna", false, new Address()));
-		//memberMap.put("m3", new MemberInfo("m3", "±è¿¬¼÷", "yuna@yuna.com", "yuna", false, new Address()));
-		nextMemberId = 3;
+		memberMap.put("m3", new MemberInfo("m3", "±è¿¬¼÷", "yuna@yuna.com", "yuna", false, new Address()));
+		nextMemberId = 4;
 	}
 
 	public MemberInfo getMemberInfo(String memberId) {

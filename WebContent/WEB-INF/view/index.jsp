@@ -17,8 +17,7 @@
 		</ul>
 	</li>
 </br>
-</br>
-</br>
+
 
 
 
@@ -29,8 +28,7 @@
 	</ul>
 </li>
 </br>
-</br>
-</br>
+
 
 
 <!-- (3/28 수) 수업.1 -->
@@ -58,8 +56,8 @@
 	</ul>
 </li>
 </br>
-</br>
-</br>
+
+
 
 
 
@@ -69,15 +67,23 @@
 	<li><a href="event/detail?id=1">event/detail?id=1</a>: HttpServletRequest을 이용한 파라미터 구하기, EventController.detail()</li>
 	<li><a href="event/detail2?id=1">event/detail2?id=1</a>: @RequestParam을 이용한 파라미터 구하기, EventController.detail2()</li>
 	<li><a href="event/detail2">event/detail2</a>: @RequestParam 필수 파라미터 400 에러, EventController.detail2()</li>
+	<li><a href="event/detail3">event/detail3</a>: 선생님께서 쓰시는 방법 EventController.java 참고 </li>
+	<br/>
 	<li><a href="search">search</a>: @RequestParam 필수 아님 설정, SearchController.search()</li>
 	<!-- 선생님 방법 detail3 -->
 	</ul>
 </li>
 </br>
-</br>
-</br>
 
 
+<li>HTTP 세션:
+	<ul>
+	<li><a href="auth/login">/auth/login</a>: HttpServletRequest를 통해 HttpSession 사용, LoginController</li>
+	<li><a href="auth/logout">/auth/logout</a>: HttpSession 직접 사용, LogoutController</li>
+	<li><a href="newevent/step1">/newevent/step1</a>: @SessionAttributes 사용, EventCreationController </li>
+	</ul>
+</li>
+</br>
 
 </ul>
 </body>

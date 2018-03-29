@@ -18,15 +18,13 @@
 <!-- 콘트롤러 자바소스 필요 없이 /index 하면 index로 보내준다. view밑에 있는 것  -->
 	
 	<mvc:view-controller path="/index" view-name="index"/>
-	
 	<mvc:view-controller path="/index2" view-name="index2"/>
-
+	<mvc:view-controller path="/index3" view-name="index3"/>
 
 <!-- ??? 디폴트 핸들러로 하겠다는 것임 -->
 <!-- 즉, 핸들러가 없으니까 어노테이션으로 읽어라는 말이다.  -->
 	
 	<mvc:default-servlet-handler/>
-	
 	
 	<!-- @Controller 로 되어있다. -->
 	<bean class="chap07.event.EventController"></bean>
@@ -66,6 +64,29 @@
 	
 	<bean class="chap07.file.FileController"></bean>
 	
+	<bean class="chap07.search.SearchController"></bean>
+	
+	
+
+<!-- //////////////////////////////////////////////////////////////// -->
+	
+	<bean class="chap07.auth.LoginController"></bean>
+	
+	<bean class="chap07.auth.Authenticator"> 
+	
+	
+		
+	</bean>
+	
+	<!-- 
+	<bean id="pwChangeSvc" class="chap02.PasswordChangeService">
+		<constructor-arg><ref bean="userRepository"/></constructor-arg>
+	</bean> -->
+	
+	
+	<!-- <bean id="loginService" class="chap07.auth.Authenticator">
+			<property name="login" ref="memberService" />
+	</bean> -->
 
 </beans>
 

@@ -14,14 +14,12 @@
 </head>
 <body>
 
-<spring:hasBindErrors name="memberInfo"></spring:hasBindErrors>
-	
-	<form method="post">
-	
-	<label for="email">이메일</label> : 
-	<input type="text" name="email" id="email" value="${memberInfo.email}" /> 
-	<form:errors path="memberInfo.email"></form:errors>
-	<br/>
+<spring:hasBindErrors name="memberInfo" />
+
+<form method="post">
+	<label for="email">이메일</label>: 
+	<input type="text" name="email" id="email" value="${memberInfo.email}"/>
+	<form:errors path="memberInfo.email"/> <br/>
 	
 	<label for="name">이름</label>: 
 	<input type="text" name="name" id="name" value="${memberInfo.name}" />

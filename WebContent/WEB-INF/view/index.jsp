@@ -85,6 +85,22 @@
 </li>
 </br>
 
+
+<li>핸들러 인터셉터
+	<ul>
+	<li>확장자 없는 모든 요청 경로: 콘솔에 실행 시간 출력됨, MeasuringInterceptor</li>
+	<li><div style="color:red;">주의!! 로그인 안하면 acl/list 경로로 들어가면 로그인화면으로 자동으로 넘겨준다.</div> xml의 mvc:interceptors bean class="chap07.common.AuthIntercepter" bean 에 설정되어있음. </li>
+	<li><a href="acl/list">/acl/list</a>: AuthInterceptor 적용. 로그인 전 접근하면 403 응답 화면 출력</li>
+	<li><a href="acl/modyfy">/acl/modyfy</a></li>
+	</ul>
+</li>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
 </ul>
 </body>
 </html>

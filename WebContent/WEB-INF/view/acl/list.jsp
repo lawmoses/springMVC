@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>로그인이 되었습니다.</h3>
+
+list.jsp 입니다.
+
 </body>
 </html>

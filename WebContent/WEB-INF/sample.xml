@@ -68,25 +68,56 @@
 	
 	
 
-<!-- //////////////////////////////////////////////////////////////// -->
+<!-- 3/29(목)  auth. Login //////////////////////////////////////////////////////////////// -->
 	
-	<bean class="chap07.auth.LoginController"></bean>
-	
-	<bean class="chap07.auth.Authenticator"> 
-	
-	
-		
+	<bean id="authenticator" class="chap07.auth.Authenticator">
+		<constructor-arg ref="memberService" />
 	</bean>
+
+	<bean class="chap07.auth.LoginController">
+		<property name="authenticator" ref="authenticator" />
+	</bean>
+
+
+<!-- 3/30(금) /acl/밑있는 폴더는 로그인 되어있지 않으면 로그인 폴더로 가게 하는 것이다. -->
+
+	<bean class="chap07.ac.ACLController">
+		<property name="aclService" ref="aclService"></property>
+	</bean>
+
+	<bean id="aclService" class="chap07.ac.AclService"></bean>
+
+
+
+<!-- 주의! 교과서 내용 그대로 아니고, 선생님께서 수정해 주신 것이다. -->
+<!-- 스프링 인터셉터로 로그인 안했을 경우, 어디로 가라고 넘겨주는 것 -->
+<!-- AuthIntercepter.java 에 들어가면 선생님께서 추가해주신 코드가 있다. () -->
 	
-	<!-- 
-	<bean id="pwChangeSvc" class="chap02.PasswordChangeService">
-		<constructor-arg><ref bean="userRepository"/></constructor-arg>
-	</bean> -->
+	<mvc:interceptors> <!-- mvc:interceptors 이거 아래에 mvc:interceptor 을 여러개 매핑(mvc:mapping)시켜서 넣을 수 있다. -->
+		<mvc:interceptor>
+				<!-- 이거 걸어버리면 path가 /acl/**, /acl/**로그인이 안되면 안나와버린다. -->
+			<mvc:mapping path="/acl/**"/>
+			<mvc:mapping path="/event/**"/>
+				<!-- 로그인 되었는지 안되었는지 물어보는 것 -->
+			<bean class="chap07.common.AuthIntercepter"></bean>
+		</mvc:interceptor>
+		
+		<mvc:interceptor>
+			<mvc:mapping path="/acl/**"/>
+				<!-- 외부에서 가져올 수 있다는 것 -->
+			<ref bean="commonModelInterceptor"></ref>
+		</mvc:interceptor>
+		
+			<!-- 아래는 매핑이 없다. 그 의미는 모든 프로세스에 다 걸린다는 것이다. -->
+			<!-- 모든 프로세스에 걸리므로 어떤  URI든 실행이 되면 실행 시간을 체크해주는 기능 -->
+			<!-- 시간 체크하는 것 -->
+		<bean class="chap07.common.MeasuringIntercepter"></bean>
+	</mvc:interceptors>
+			<!-- 위에서 부르므로 갈 수 있다. -->
+	<bean id="commonModelInterceptor" class="chap07.common.CommonModelInterceptor"></bean>
+
+	<bean class="chap07.calculator.CalculationController"></bean>
 	
-	
-	<!-- <bean id="loginService" class="chap07.auth.Authenticator">
-			<property name="login" ref="memberService" />
-	</bean> -->
 
 </beans>
 
